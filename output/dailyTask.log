@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.4.9)  17 NOV 2025 01:08
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.4.9)  18 NOV 2025 03:23
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/miyakeakito/src/github.com/yoyoyo0917/hibikennsann/dailyTask
@@ -753,7 +753,9 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \sift@deathcycles=\count327
 \@vwid@loff=\dimen297
 \@vwid@roff=\dimen298
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/physics/physics.sty
+Package: physics 
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
  (/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
@@ -846,30 +848,30 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 ) (./output/dailyTask.aux)
 \openout1 = dailyTask.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count339
@@ -890,22 +892,26 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 
-Package chemgreek Info: Activating mapping `default' on line 27.
+Package chemgreek Info: Activating mapping `default' on line 28.
 
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 28.
  (./output/dailyTask.out) (./output/dailyTask.out)
 \@outlinefile=\write4
 
 \openout4 = dailyTask.out
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 29.
+(Font)              scaled to size 7.69775pt on input line 30.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 29.
+(Font)              scaled to size 5.77332pt on input line 30.
 
 
 [1
 
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./output/dailyTask.bbl(load cache: extra_lmroman12-regular.luc)
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+[2]
+
+[3] (./output/dailyTask.bbl(load cache: extra_lmroman12-regular.luc)
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
 (Font)              scaled to size 13.85594pt on input line 60.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
@@ -936,9 +942,11 @@ LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <10.95> not available
 (Font)              Font shape `JY3/gt/m/n' tried instead on input line 63.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 10.53629pt on input line 63.
+LaTeX Font Info:    Kanji font shape `JY3/gt/m/it' undefined
+(Font)              No change on input line 66.
 )
 
-[2] 
+[4] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./output/dailyTask.aux)
  ***********
@@ -950,19 +958,19 @@ Package rerunfilecheck Info: File `dailyTask.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 24098 strings out of 475506
+ 24610 strings out of 475506
  125244,953878 words of node,token memory allocated
  1180 words of node memory still in use:
    11 hlist, 2 vlist, 5 rule, 2 glue, 4 kern, 4 sub_mlist, 1 glyph, 247 attribute, 55 glue_spec, 34 attribute_list, 2 write, 14 user_defined nodes
-   avail lists: 1:15,2:18355,3:344,4:701,5:512,6:27,7:3550,8:48,9:2485,10:4
- 46409 multiletter control sequences out of 65536+600000
+   avail lists: 1:15,2:25042,3:344,4:701,5:512,6:27,7:3550,8:48,9:2485,10:5
+ 46902 multiletter control sequences out of 65536+600000
  40 fonts using 28737239 bytes
- 125i,12n,128p,1928b,459s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,12n,128p,1928b,472s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on dailyTask.pdf (2 pages, 121445 bytes).
+Output written on dailyTask.pdf (4 pages, 156992 bytes).
 
-PDF statistics: 107 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
- 24 named destinations out of 1000 (max. 131072)
+PDF statistics: 138 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
