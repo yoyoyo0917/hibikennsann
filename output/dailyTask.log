@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.4.9)  18 NOV 2025 03:23
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.4.9)  18 NOV 2025 03:26
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/miyakeakito/src/github.com/yoyoyo0917/hibikennsann/dailyTask
@@ -962,12 +962,12 @@ Here is how much of LuaTeX's memory you used:
  125244,953878 words of node,token memory allocated
  1180 words of node memory still in use:
    11 hlist, 2 vlist, 5 rule, 2 glue, 4 kern, 4 sub_mlist, 1 glyph, 247 attribute, 55 glue_spec, 34 attribute_list, 2 write, 14 user_defined nodes
-   avail lists: 1:15,2:25042,3:344,4:701,5:512,6:27,7:3550,8:48,9:2485,10:5
+   avail lists: 1:15,2:25798,3:344,4:701,5:512,6:27,7:3550,8:48,9:2485,10:5
  46902 multiletter control sequences out of 65536+600000
  40 fonts using 28737239 bytes
  125i,12n,128p,1928b,472s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on dailyTask.pdf (4 pages, 156992 bytes).
+Output written on dailyTask.pdf (4 pages, 157122 bytes).
 
 PDF statistics: 138 PDF objects out of 1000 (max. 8388607)
  109 compressed objects within 2 object streams
