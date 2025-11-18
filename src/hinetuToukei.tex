@@ -1,0 +1,55 @@
+\item 等方的でない2次元調和振動子を考え、振動数$\nu_1 \ll \nu_2$とする。このとき、比熱$C_v$に関する以下の式を導け。
+  \eq{
+    T \simeq T_1: C_v &= k_B\{(\f{h\nu_1}{k_BT})^2e^{-\f{h\nu_1}{k_BT}} + \dots\} \\
+    T \simeq T_2: C_v &= k_B\{1 - \f{1}{12}(\f{h\nu_1}{k_BT})^2 + (\f{h\nu_2}{k_BT})^2e^{-\f{h\nu_2}{k_BT}} + \dots\} \\
+    T \simeq T_3: C_v &= k_B\{2-\f{1}{21}(\f{h\nu_2}{k_BT})^2 + \dots\}
+  }
+  ただし、$k_BT_1 \ll h\nu_1\ll k_BT_2 \ll h\nu_2 \ll k_BT_3$とする。
+  \\\\\\
+  解答\\
+  \hrulefill\\
+  
+  平均エネルギーは、ヘルムホルツの自由エネルギー$F$を用いて、
+  \eq{
+    \bar{\epsilon} = \f{\partial \f{F}{T}}{\partial \f{1}{T}}
+  }
+  と表される。2次元の調和振動子の分配関数$Z$は、
+  \eq{\label{eq:Z2DHO}
+    Z &= \f{e}{N}\sum_{n_1,n_2} e^{-\f{\epsilon_{n_1,n_2}}{k_BT}} \\
+    &= e^{-\f{F}{kT}}
+  }
+  であるから、平均エネルギーは、
+  \eq{
+    \bar{\epsilon} &= \pardiff{ }{\f{1}{T}}(-k_B \ln Z) \\
+    &= k_B T^2 \pardiff{\ln Z}{T}
+  }
+  式\eqref{eq:Z2DHO}において、
+  \eq{
+    \epsilon_{n_1,n_2} = (n_1 + \f{1}{2})h\nu_1 + (n_2 + \f{1}{2})h\nu_2
+  }
+  であるから、等比級数の公式等を用いて、
+  \eq{
+    Z = \f{e}{N} e^{-\f{h(\nu_1 + \nu_2)}{2k_BT}}(1 - e^{-\f{h\nu_1}{k_BT}})^{-1}(1 - e^{-\f{h\nu_2}{k_BT}})^{-1}
+  }
+  これで、自然対数をとり、$T$で微分すると、
+  \eq{
+    \bar{\epsilon} = \f{1}{2}h(\nu_1 + \nu_2) + \f{h\nu_1}{e^{\f{h\nu_1}{k_BT}} - 1} + \f{h\nu_2}{e^{\f{h\nu_2}{k_BT}} - 1}
+  }
+  ここで、右辺第2,3項はベルヌーイ数の定義であるテイラー展開を行う。\\
+  ベルヌーイ数$B_n$の定義$\f{x}{e^x - 1}$のテイラー展開からxを除したもので、
+  \eq{
+    \f{1}{e^x - 1} &= \sum_{n=0}^{\infty} \f{B_n}{n!} x^{n-1} \\
+    &= \f{1}{x} - \f{1}{2} + \f{x}{12} - \f{x^3}{720} + \dots
+  }
+  これにより、
+  \eq{
+    T \simeq T_1: \bar{\epsilon} &= \f{1}{2}h(\nu_1 + \nu_2) + h\nu_1 e^{-\f{h\nu_1}{k_BT}} + h\nu_2 e^{-\f{h\nu_2}{k_BT}} \\
+    T \simeq T_2: \bar{\epsilon} &= \f{1}{2}h\nu_2 + k_BT + h\nu_2 e^{-\f{h\nu_2}{k_BT}} + \f{1}{12}\f{(h\nu_1)^2}{k_BT} \\
+    T \simeq T_3: \bar{\epsilon} &= 2k_BT + \f{1}{12}\f{h^2(\nu_1^2 + \nu_2^2)}{k_BT}
+  }
+  となる。比熱は、
+  \eq{
+    C_v = \pardiff{\bar{\epsilon}}{T}
+  }
+  で与えられるから、求める式が導かれる。\\
+  この式は、高温で古典的な結果$C_v = 2k_B$に近づき、低温で自由度が凍結することを示している。
