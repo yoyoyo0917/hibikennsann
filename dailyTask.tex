@@ -7,6 +7,7 @@
 \usepackage{lastpage}
 \usepackage{adjustbox}
 \usepackage{physics}
+\usepackage{xstring}
 \usepackage[bookmarks=true, hidelinks]{hyperref}
 
 \newcommand{\seq}[1]{\begin{equation}
@@ -25,13 +26,34 @@
 \newcommand{\f}[2]{\frac{#1}{#2}}
 \newcommand{\pardiff}[2]{\f{\partial{#1}}{\partial{#2}}}
 \newcommand{\const}[2][ ]{\mathrm{#2}_{\mathrm{#1}}}
+
+\fancypagestyle{mypagestyle}{
+\cfoot{\thepage/\pageref{LastPage}}
+}
+
+\pagestyle{mypagestyle}
 \begin{document}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        {\LARGE\bfseries 日時タスク}\\[0.5cm]
+    \end{center}
+\end{titlepage}
+\tableofcontents
+\clearpage
+
 \begin{enumerate}
-  \input{src/hinetuToukei.tex}
-  \\\\\\
-  \input{src/setudou.tex}
-  \\\\\\
+  \section{量子統計と比熱}
+  \input{src/hinetuToukei.tex}\\
+  \hrulefill
+  \\\\
+  \section{摂動論の1次近似}
+  \input{src/setudou.tex}\\
+  \hrulefill
+  \\\\
+  \section{光学と力学のアナロジー}
   \input{src/analogyQuan.tex}
+
 
 \end{enumerate}
 \nocite{*}\bibliography{bib/bibtest.bib}
