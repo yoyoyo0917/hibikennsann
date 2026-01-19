@@ -1,0 +1,23 @@
+\item Eyringの式
+    \seq{
+        k &= \f{k_B T}{h}exp\left(-\f{\Delta G^\ddagger}{RT}\right)\\
+            &= \f{k_B T}{h}exp\left(\f{\Delta S^\ddagger}{R}\right)exp\left(-\f{\Delta H^\ddagger}{RT}\right)
+    }
+    を導け。
+    ただし、$k$は反応速度定数、$h$はプランク定数、$R$は気体定数、$T$は絶対温度、$\Delta G^\ddagger$は活性化ギブスエネルギー、$\Delta H^\ddagger$は活性化エンタルピー、$\Delta S^\ddagger$は活性化エントロピーである。
+    \\\\\\
+    解答\\
+    \hrulefill\\
+    以降、式を簡便にするためにTはエネルギーの次元を持った温度とし、ボルツマン定数を省略する。(最終的に$T \to k_B T, S \to S/k_B$とすればよい)\\
+    分配関数はボルツマン因子を確率として見た時の規格化因子であるから、以下の式で与えられる。
+    \eq{
+        Z = \sum_i \exp{-\f{E_i}{T}}
+    }
+    ここで、$E_i$は状態$i$のエネルギーである。\\
+    遷移状態理論における化学反応式を考える。
+    $$
+        \ce{A + B <=> AB$^\ddagger$ -> P}
+    $$
+    反応物$A, B$が遷移状態$AB^\ddagger$を経て生成物$P$に変化する。このとき、反応物の分配関数を$Z_r$、遷移状態の分配関数を$Z^\ddagger$とする。\\
+    遷移状態理論では、遷移状態で反応座標に沿った自由度を持つ並進運動で正の方向に進むものはすべて生成物に変化すると仮定する。このとき、遷移状態の分配関数$Z^\ddagger$は、反応座標に沿った自由度の分配関数$Z_{\mathrm{trans}}$とその他の自由度の分配関数$Z_{\mathrm{other}}^\ddagger$の積で表しておくと都合が良い。\\
+

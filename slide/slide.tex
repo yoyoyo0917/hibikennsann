@@ -1,0 +1,1029 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[no-math]{fontspec}
+\usepackage{tikz}
+\usepackage[deluxe]{luatexja-preset}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\usepackage{bookmark}
+\usepackage{amsmath}
+\usepackage[method=widget]{animate}
+\usetheme{Madrid}
+\setbeamertemplate{navigation symbols}{}
+% ヘッドラインをカスタマイズして右上に著者名とページ番号を配置
+\setbeamertemplate{headline}{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+      \hfill%
+      \usebeamerfont{author in head/foot}\insertauthor\hspace*{2em}%
+      \usebeamerfont{page number in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}%
+  }%
+}
+\setbeamertemplate{footline}{}% 元のページ番号を削除
+\setbeamerfont{title}{size=\LARGE}
+\setbeamerfont{frametitle}{size=\large}
+\usetikzlibrary{arrows.meta}
+
+\newcommand{\seq}[1]{\begin{equation*}
+  \begin{split}
+    #1
+  \end{split}
+\end{equation*}}
+\newcommand{\eq}[1]{\begin{align}
+  #1
+\end{align}
+}
+\newcommand{\longeq}[1]{\begin{multline*}
+  #1
+\end{multline*}
+}
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\diff}[2]{\f{\mathrm{d}{#1}}{\mathrm{d}{#2}}}
+\newcommand{\pardiff}[2]{\f{\partial{#1}}{\partial{#2}}}
+\newcommand{\const}[2][ ]{\mathrm{#2}_{\mathrm{#1}}}
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+
+\title{混合溶液の蒸気圧-理想溶液と実在溶液の比較}
+\author{yoyoyo0917}
+\date{\today}
+
+
+
+
+\begin{document}
+% \frame{\titlepage}
+
+% \begin{frame}
+%     \frametitle{Antoineの式(単位に注意)}
+%     \begin{block}{式}
+%         \seq{
+%             \log_{10}{P} = A - \f{B}{T + C}
+%         }
+%         \begin{itemize}
+%             \item $P$: 蒸気圧(Torr)
+%             \item $T$: 絶対温度(K)
+%             \item $A,B,C$: 定数
+%         \end{itemize}
+%     \end{block}
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{定数一覧}
+%     \begin{table}[]
+%         \centering
+%         \begin{tabular}{cccc}
+%             \hline
+%             物質 & A & B & C \\
+%             \hline
+%             シクロヘキサン & 6.8051 & 1182.77 & 220.618 \\
+%             メタノール & 8.0779 & 1580.08 & 239.500 \\
+%             トルエン & 6.9255 & 1327.62 & 217.625 \\
+%             \hline
+%         \end{tabular}
+%         \caption{Antoineの式の定数}
+%     \end{table}
+    
+% \end{frame}
+
+
+% \begin{frame}
+%     \frametitle{流れ}
+%     \begin{columns}
+%         \begin{column}[T]{0.3\hsize}　　　　　\tikzmark{moku1}
+%             \begin{block}{測定+計算(実在 vs 理想)}
+%             \begin{itemize}
+%                 \item 実験
+%                 \item Antoineの式\\+Raoultの法則
+%             \end{itemize}
+%             \end{block}
+%         \end{column}
+%         \begin{column}[T]{0.3\hsize}　　\tikzmark{moku2L}\tikzmark{moku2R}
+%             \begin{block}{比較(ここから)}
+%             \begin{itemize}
+%                 \item 実験値 vs 理想値\\
+%                       (実在溶液 vs 理想溶液)
+%             \end{itemize}
+%             \end{block}
+%         \end{column}
+%         \begin{column}[T]{0.3\hsize}　　　　\tikzmark{moku3}
+%             \begin{block}{考察(理想とのずれ)}
+%             \begin{itemize}
+%                 \item 活量係数$\gamma$
+%                 \item 過剰熱力学量$X^\mathrm{E}$
+%             \end{itemize}
+%             \end{block}
+%         \end{column}
+%     \end{columns}
+%     % ブロック間に曲線矢印を描画
+%     \begin{tikzpicture}[overlay, remember picture,
+%         arr/.style={-{Stealth[length=3mm]}, thick, blue!70!white, shorten >=2mm, shorten <=2mm}]
+%         \draw[arr] (moku1.east) to[bend left=25] (moku2L.west);
+%         \draw[arr] (moku2R.east) to[bend left=25] (moku3.west);
+%     \end{tikzpicture}
+% \end{frame}
+
+
+
+
+
+
+
+
+% \begin{frame}
+% \frametitle{結果(シクロヘキサン-トルエン混合溶液)\hfill\alert{※トルエンは蒸気圧低く不掲}}
+% \begin{columns}
+%     \begin{column}[T]{0.5\hsize}
+%         \begin{figure}
+%             \centering
+%             \includegraphics[height=6cm]{img/cyclohexane_PT2.png}
+%             \caption{Cyclohexane-Toluene混合溶液}
+%         \end{figure}
+%     \end{column}
+%     \begin{column}[T]{0.5\hsize}
+%         \begin{block}{}
+%             \begin{itemize}
+%                 \item 沸点の大きさは $\structure{理想>実在>シクロヘキサン}$
+%             \end{itemize}
+%         \end{block}
+%         \begin{block}{}
+%             \begin{itemize}
+%                 \item トルエンを加えると沸点が上昇する
+%             \end{itemize}
+%         \end{block}
+%         \begin{block}{}
+%             \begin{itemize}
+%                 \item 一般に期待される\structure{蒸気圧降下}が見られた
+%             \end{itemize}
+%         \end{block}
+%     \end{column}
+    
+% \end{columns}
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{結果(メタノール-トルエン混合溶液)\hfill\alert{※トルエンは蒸気圧低く不掲}}
+%     \begin{columns}
+%         \begin{column}[T]{0.5\hsize}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[height=6cm]{img/methanol_PT2.png}
+%                 \caption{Methanol-Toluene混合溶液}
+%             \end{figure}
+%         \end{column}
+%         \begin{column}[T]{0.5\hsize}
+%             \begin{block}{}
+%                 \begin{itemize}
+%                     \item 沸点の大きさは $\structure{理想>メタノール>実在}$
+%                 \end{itemize}
+%             \end{block}
+%             \begin{block}{}
+%                 \begin{itemize}
+%                     \item トルエンを加えると沸点が下降する
+%                 \end{itemize}
+%             \end{block}
+%             \begin{block}{}
+%                 \begin{itemize}
+%                     \item 一般に期待される蒸気圧降下ではなく、\structure{蒸気圧上昇}が見られた
+%                 \end{itemize}
+                
+%             \end{block}
+            
+%         \end{column}
+%     \end{columns}
+    
+% \end{frame}
+
+\begin{frame}
+    \frametitle{青:実在溶液(実験)　赤:理想溶液(Raoultの法則) の比較}
+    \begin{columns}
+        \begin{column}[T]{0.5\hsize}
+            \begin{figure}
+                \centering
+                \includegraphics[height=6cm]{img/PT_main.png}
+                \caption{左:メタノール系 右:シクロヘキサン系}
+            \end{figure}
+        \end{column}
+        \begin{column}[T]{0.5\hsize}
+            \begin{block}{}
+                どちらも
+                \begin{itemize}
+                    \item $P_{\mathrm{Real}}>P_{\mathrm{Ideal}}$\\\hfill
+                    \item $T_{\mathrm{Real}}<T_{\mathrm{Ideal}}$
+                \end{itemize}
+                実在溶液の方が気相に飛び出しやすい
+            \end{block}
+            \begin{block}{単純な「理想-実在」差を見る}
+                \begin{itemize}
+                    \item シクロヘキサン系: 小さい
+                    \item メタノール系: 大きい
+                \end{itemize}
+            \end{block}
+            \begin{alertblock}{}
+                \structure{実在:相互作用変化あり}\\
+                \alert{理想:相互作用変化なし}
+                
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+    
+    
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+    \frametitle{分子間相互作用をもとに考える(シクロヘキサン-トルエン混合溶液)}
+    \begin{columns}
+        \begin{column}{0.45\hsize}
+            \begin{figure}
+            \centering
+            \includegraphics[height=6cm]{img/cyclohexane_PT2.png}
+            \caption{左:メタノール系右:シクロヘキサン系}
+        \end{figure}
+        \end{column}
+        \begin{column}{0.45\hsize}
+                \begin{block}{}
+                    \begin{itemize}
+                        \item トルエンの$\structure{\pi}$\structure{スタッキング}\\(\structure{分散力})がシクロヘキサンで緩和
+                        \item シクロヘキサンが受ける分子間相互作用は大きく変化しない
+                    \end{itemize} 
+                    \begin{center}
+                        T\structure{\rule[0.5ex]{0.3cm}{2pt}}T$>$C\rule[0.5ex]{0.3cm}{2pt}C$\simeq$C\rule[0.5ex]{0.3cm}{2pt}T
+                    \end{center}
+                \end{block}
+            \begin{columns}
+                \begin{column}{0.5\hsize}
+                    \begin{block}{}
+                        分子は少々気相に\\飛び出しやすくなる
+                    \end{block}
+                    \hfill(相互作用の概要→)
+                \end{column}
+                \begin{column}{0.4\hsize}
+                    \animategraphics[height=4cm,autoplay, loop, poster=first]{2}{img/toluene_cyclohexane_}{1}{5}
+                \end{column}
+            \end{columns}
+        \end{column}
+        
+        
+    \end{columns}
+
+
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{分子間相互作用をもとに考える(メタノール-トルエン混合溶液)}
+    \begin{columns}
+        \begin{column}{0.45\hsize}
+            \begin{figure}
+                \centering
+                \includegraphics[height=6cm]{img/methanol_PT2.png}
+                \caption{左:メタノール系右:シクロヘキサン系}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.45\hsize}
+            \begin{block}{}
+                \begin{itemize}
+                    \item メタノールの\alert{水素結合}が混合により緩和
+                    \item メタノールが受ける分子間相互作用が大きく変化
+                    \item (先と同様)トルエン$\structure{\pi}$\structure{スタッキング}が緩和
+                \end{itemize}
+                \begin{center}
+                    M\alert{\rule[0.5ex]{0.3cm}{2pt}}M$\gg$M\rule[0.5ex]{0.3cm}{2pt}T\\
+                    T\structure{\rule[0.5ex]{0.3cm}{2pt}}T$>$M\rule[0.5ex]{0.3cm}{2pt}T
+                \end{center}
+            \end{block}
+            \begin{columns}
+                \begin{column}{0.5\hsize}
+                    \begin{block}{}
+                        分子は大変気相に\\飛び出しやすくなる
+                    \end{block}
+                    \hfill(相互作用の概要→)
+                \end{column}
+                \begin{column}{0.4\hsize}
+                    \animategraphics[width=5cm,autoplay, loop, poster=first]{2}{img/toluene_methanol_}{1}{5}
+                \end{column}
+            \end{columns}
+        \end{column}
+    \end{columns}
+
+
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{正則溶液モデル(先の考えを数式で表現)}
+    
+    \begin{columns}
+        \begin{column}[T]{0.45\hsize}
+            \begin{alertblock}{モデルの仮定}
+                \begin{itemize}
+                    \item \structure{ファンデルワールス力のみ}を考慮
+                    \item $H^{\mathrm{E}} \ne 0$
+                    \item $S^{\mathrm{E}}=0$\\
+                          (混合は美しい)
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+        \begin{column}[T]{0.45\hsize}
+            \begin{block}{式}
+                \seq{
+                    H^{\mathrm{E}} = G^{\mathrm{E}}= n \xi RTx_{\mathrm{1}}x_{\mathrm{2}}\\
+                }
+                ※$\xi RT=\text{const}$
+            \end{block}
+        \end{column}
+    \end{columns}
+    \begin{block}{近似の元$\xi$から活量係数}
+        $\xi$と活量係数には関係がある。($\ln{\gamma_1} = \xi x_2^2$)\\
+        {\large→$\xi$を用いて$\gamma$を見積もり可能!}
+    \end{block}
+    {\tiny 引用:アトキンス物理化学(上)第10版 p.203}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+        \frametitle{正則溶液モデルによる活量係数見積もり}
+        \begin{columns}
+            \begin{column}[T]{0.45\hsize}
+                \begin{figure}
+                    \centering
+                    \includegraphics[height=5cm]{img/cyclohexane_activity_coeff.png}
+                    \caption{シクロヘキサン系の活量係数}
+                \end{figure}
+            \end{column}
+            \begin{column}[T]{0.45\hsize}
+                \begin{figure}
+                    \centering
+                    \includegraphics[height=5cm]{img/methanol_activity_coeff.png}
+                    \caption{メタノール系の活量係数}
+                \end{figure}
+            \end{column}
+        \end{columns}
+        \begin{block}{}
+            \centering
+            \textgt{非理想性:}メタノール系>シクロヘキサン系　　(トルエン成分で顕著)
+        \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{$G^{\mathrm{E}}=H^{\mathrm{E}}-T S^{\mathrm{E}}$で拡張　　　$G^{\mathrm{E}}=n\xi RT x_1 x_2$　と　$\xi T=\mathrm{const}$から}
+    \begin{columns}
+        \begin{column}[T]{0.45\hsize}
+            \includegraphics[height=6cm]{img/xi.png}
+        \end{column}
+        \begin{column}[T]{0.45\hsize}
+            \begin{block}{$\xi~$VS$~1/T$の直線}
+                \begin{itemize}
+                    \item $「切片」\times Rx_1x_2=-S^{\mathrm{E}}$
+                    \item $「傾き」\times Rx_1x_2=H^{\mathrm{E}}$
+                \end{itemize}
+
+            \end{block}
+            \begin{block}{メタノール系}
+                \begin{itemize}
+                    \item $S^{\mathrm{E}}=-0.54~\mathrm{~J~K^{-1}~mol^{-1}}$
+                    \item 混合能が弱い(極性)
+                    \item トルエン排除能が寄与
+                \end{itemize}
+            \end{block}
+            \begin{block}{シクロヘキサン系}
+                \begin{itemize}
+                    \item $S^{\mathrm{E}}=6.3~\mathrm{~J~K^{-1}~mol^{-1}}$
+                    \item 混合能が強い
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+
+
+
+
+
+
+
+\begin{frame}
+\frametitle{補足目次}
+    \tableofcontents
+\end{frame}
+
+\section{純溶媒との比較}
+\begin{frame}
+    \frametitle{純溶媒と比較して}
+    \begin{columns}
+        \begin{column}[T]{0.45\hsize}
+            \begin{figure}
+                \centering
+                \includegraphics[height=6cm]{img/cyclohexane_PT.png}
+                \caption{シクロヘキサン-トルエン混合溶液}
+            \end{figure}
+        \end{column}
+        \begin{column}[T]{0.45\hsize}
+            \begin{figure}
+                \centering
+                \includegraphics[height=6cm]{img/methanol_PT.png}
+                \caption{メタノール-トルエン混合溶液}
+            \end{figure}
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+\section{活量}
+\begin{frame}
+\frametitle{活量色々}
+\begin{block}{定義}
+    \seq{
+        \mu_i=\mu_i^\circ + RT\ln{a_i}
+    }
+\end{block}
+\begin{block}{理想溶液}
+    \seq{
+        a_i = x_i
+    }
+\end{block}
+\begin{block}{過剰化学ポテンシャル}
+    \seq{
+        \mu_{i}^{\mathrm{E}}=RT\ln{\gamma_i}
+    }
+\end{block}
+\end{frame}
+
+
+        
+    
+
+
+
+\section{理想溶液と実在溶液}
+\begin{frame}
+\frametitle{理想溶液と実在溶液}
+\begin{columns}
+    \begin{column}[T]{0.45\hsize}
+        \begin{block}{理想溶液}
+            \begin{itemize}
+                \item 理想的な混合
+                \item Raoultの法則が成立$P=\sum x_iP_i$ 
+                \item 混合エンタルピー$\Delta H_{\mathrm{mix}}=0$
+                \item \alert{各成分間の相互作用が等しい}
+            \end{itemize}
+        \end{block}
+    \end{column}
+    \begin{column}[T]{0.45\hsize}
+        \begin{block}{実在溶液}
+            \begin{itemize}
+                \item Raoultの法則が成立するとは限らない
+                \item 活量係数を以てして表現することは可能である$P=\sum \gamma_ix_iP_i$
+                \item \alert{各成分間の相互作用が異なる}
+            \end{itemize}
+        \end{block}
+    \end{column}
+\end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{(くわしく)何がこのずれを引き起こすのか}
+        \begin{block}{理想混合における熱力学諸量(粒子数(濃度)のみに依存)}
+            \begin{itemize}
+                \item 成分iの化学ポテンシャル$\mu_i=\mu_i^\circ + RT\ln{x_i}$
+                \item 混合エンタルピー$\Delta H_{\mathrm{mix}}=0$
+                \item 混合エントロピー$\Delta S_{\mathrm{mix}}= -R\sum N_i\ln{x_i}$
+                \item 混合ギブスエネルギー$\Delta G_{\mathrm{mix}}=\Delta H_{\mathrm{mix}} - T\Delta S_{\mathrm{mix}}=RT\sum N_i\ln{x_i}$
+                \item 体積変化$\Delta V_{\mathrm{mix}}=(\partial_P G_{\mathrm{mix}})_{T,N}=0$
+            \end{itemize}
+        \end{block}
+        \begin{columns} % [T]オプションで上揃え
+        % --- 1列目 ---
+        \begin{column}{.4\textwidth}
+            
+            \begin{block}{上の量からわかること\hfill\tikzmark{start}}
+                \begin{itemize}
+                    \item 混合はエントロピー増大のみに従って進行する。
+                    \item 故に、いかなる物質も無制限に混ざり合うことが可能である。
+                    \item 体積変化は起こらない。
+                \end{itemize}
+            \end{block}
+        \end{column}
+
+        % --- 2列目 ---
+        \begin{column}{.4\textwidth}
+            \begin{block}{\tikzmark{end}実際の混合に見られる矛盾点}
+                \begin{itemize}
+                    \item 水と油のように混ざり合わない例が存在する。
+                    \item 混合により体積変化が起こる。
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    % 記憶した位置(tikzmark)の間に矢印を描画
+    \begin{tikzpicture}[overlay, remember picture]
+        \draw[
+            -{Stealth[length=4mm, width=3mm]}, % 矢印の先端のスタイル
+            ultra thick,      % 線の太さ
+            blue!70!white,    % 色
+            shorten <=2mm,    % 始点を少し短くする
+            shorten >=2mm     % 終点を少し短くする
+        ]
+            (start) -- (end); % 始点から終点へ線を引く
+    \end{tikzpicture}
+\end{frame}
+
+
+
+% \begin{frame}
+%     \begin{block}{Raoultの法則が成立するとき($\gamma=1$)}
+%             同物質を加えた時
+%         \end{block}
+%         \begin{block}{Raoultの法則が近似的に成立する時}
+%             \begin{itemize}
+%                 \item 希薄溶液
+%                 \item 分子間相互作用が似ている
+%             \end{itemize}
+%         \end{block}
+% \end{frame}
+
+
+
+% \begin{frame}
+%     \frametitle{気液平衡とは}
+%     \begin{block}{式}
+%         気液平衡とは、気相と液相のフガシティー$f_i$(散逸能)が等しい状態
+%         \seq{
+%             f_i^{(g)}=f_i^{(l)}
+%         }
+%     \end{block}
+% \end{frame}
+
+
+
+
+% \begin{frame}
+%     \frametitle{グランドカノニカル分布との類似性}
+%     \begin{block}{グランドカノニカル分布}
+%             $\Delta H_{\mathrm{mix}} =0$と$\Delta H_{\mathrm{mix}} \neq 0$の関係性は、グランドカノニカル分布とカノニカル分布の関係性に似ている。
+%         \seq{
+%             P(N) &= \f{1}{\Theta}Q_N(T,V)e^{\beta \mu N}\\
+%         }
+%     \end{block}
+% \end{frame}
+
+
+
+
+\begin{frame}
+    \frametitle{過剰熱力学量}
+    \begin{block}{過剰熱力学量}
+        過剰熱力学量とは、実在溶液の熱力学量と理想溶液の熱力学量の差で定義される量である。\\
+        理想溶液と実在溶液の違いとして特徴的なのは、$\Delta H_{\mathrm{mix}}$の有無である。\\
+        故に、過剰混合エンタルピー$H^{\mathrm{E}}=\Delta H_{\mathrm{mix}}$であるように、過剰量はどれほど理想からずれているかを表す尺度となる。
+    \end{block}
+    \begin{block}{式}
+        $$
+            X^{\mathrm{E}} = X_{\mathrm{real}} - X_{\mathrm{ideal}}
+        $$
+        
+    \end{block}
+    
+\end{frame}
+
+
+
+
+% \begin{frame}
+%     \frametitle{過剰混合ギブスエネルギー}
+%     \begin{block}{式}
+%         過剰混合ギブスエネルギー$G_{e}$は実在溶液の混合ギブスエネルギーと$G_{\mathrm{mix}}$と完全溶液のギブスエネルギー$G_{\mathrm{mix}}^{\text{ideal}}$の差であらわせる。
+%         \seq{
+%             G_{e} =  G_{\mathrm{mix}} - G_{\mathrm{mix}}^{\text{ideal}}
+%         }
+%     \end{block}
+%     \begin{columns}
+%         \begin{column}[T]{0.45\hsize}
+%             \begin{block}{}
+%                 化学ポテンシャル$\mu_i$により、
+%                 \seq{
+%                     G_{\mathrm{mix}}^E &= \sum x_i \mu_i^E\\
+%                     &= RT\sum x_i \ln{\gamma_i}
+%                 }
+%             \end{block}
+%         \end{column}
+%         \begin{column}[T]{0.45\hsize}
+%             \begin{block}{}
+%                 $\Delta G_{\mathrm{mix}}$の大小関係は$G_{\mathrm{mix}}^E$に依存する
+%             \end{block}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+
+
+\section{Margulesの式}
+\begin{frame}
+    \frametitle{正則溶液モデルで活量を計算(Margulesの式)}
+    \begin{block}{式}
+        正則溶液モデルのパラメーター$\xi$を使って、2成分系の混合溶液における活量係数$\gamma_i$は以下のように表される。
+        \seq{
+            \ln{\gamma_{\mathrm{1}}} &= \xi (1 - x_{\mathrm{1}})^2\\
+            \ln{\gamma_{\mathrm{2}}} &= \xi (x_{\mathrm{1}})^2\\
+        }
+    \end{block}
+    \begin{columns}[T] % [T]オプションで上揃え
+        % --- 1列目 ---
+        \begin{column}{.4\textwidth}
+            
+            \begin{block}{補正Raoultの法則\hfill\tikzmark{start}}
+                \seq{
+                    P &= x_{\mathrm{1}}\gamma_{\mathrm{1}}P_{\mathrm{1}} + x_{\mathrm{2}}\gamma_{\mathrm{2}}P_{\mathrm{2}}\\
+                    &= x_{\mathrm{1}}P_{\mathrm{1}}e^{\xi (1 - x_{\mathrm{1}})^2} + x_{\mathrm{2}}P_{\mathrm{2}}e^{\xi (x_{\mathrm{1}})^2}\\
+                }
+            \end{block}
+        \end{column}
+
+        % --- 2列目 ---
+        \begin{column}{.4\textwidth}
+            \begin{block}{\tikzmark{end}実験値を用いれば}
+                $\xi$をNewton法などで数値的に求めることができる。\\
+                故に正則溶液として扱った場合の活量係数を求めることができる。
+                
+            \end{block}
+        \end{column}
+    \end{columns}
+    % 記憶した位置(tikzmark)の間に矢印を描画
+    \begin{tikzpicture}[overlay, remember picture]
+        \draw[
+            -{Stealth[length=4mm, width=3mm]}, % 矢印の先端のスタイル
+            ultra thick,      % 線の太さ
+            blue!70!white,    % 色
+            shorten <=2mm,    % 始点を少し短くする
+            shorten >=2mm     % 終点を少し短くする
+        ]
+            (start) -- (end); % 始点から終点へ線を引く
+    \end{tikzpicture}
+    
+\end{frame}
+
+
+
+\section{正則溶液、Margulesの式のつながり}
+\begin{frame}
+    \frametitle{実際の正則溶液とMargulesの式のつながり}
+    \begin{columns}
+    \begin{column}[T]{0.45\hsize}
+        
+    
+    \begin{block}{過剰化学ポテンシャルとの関係利用}
+        \longeq{
+            H_{\mathrm{e}} = G_{\mathrm{e}} \\
+            = (n_1 + n_2) \xi RT\left(\f{n_1}{n_1 + n_2}\right)\left(\frac{n_2}{n_1 + n_2}\right)
+        }
+            
+        \seq{
+            \left(\pardiff{G_{\mathrm{e}}}{n_1}\right)_{T,P,n_2} &= \xi RT \left(\frac{n_2}{n_1 + n_2}\right)^2\\
+            &=\mu^\mathrm{E}=RT\ln{\gamma_1}
+        }
+        
+    \end{block}
+    \end{column}
+    \begin{column}[T]{0.45\hsize}
+    \begin{block}{左の導出から}
+        活量係数を求める式の含蓄
+        \begin{itemize}
+            \item $G^{\mathrm{E}}=n\xi RTx_1x_2$
+            \item $\xi$は$n_1,n_2$に依存しない
+        \end{itemize}
+        正則溶液モデルから導いた活量係数の傾向は、正則溶液よりも緩い仮定\\
+        →得た$\xi$からモデルの拡張が可能
+    \end{block}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+\section{拡張正則溶液・各種過剰量}
+\begin{frame}
+    \frametitle{拡張正則溶液モデル}
+    \begin{columns}
+        \begin{column}[T]{0.45\hsize}
+            \begin{alertblock}{仮定}
+                \begin{itemize}
+                    \item 分子間相互作用はファンデルワールス力のみ
+                    \item $G^{\mathrm{E}}=n\xi RTx_1x_2$
+                    \item $\xi=A/T+B$(A,B:定数)
+                    \item $H^{\mathrm{E}}=nARx_1x_2$
+                    \item $S^{\mathrm{E}}=-nBRx_1x_2$
+                \end{itemize}
+                
+            \end{alertblock}
+            \begin{block}{測定範囲にてモデルが成立するか}
+                $\xi$を求める際の仮定:「$\xi$は$n_1,n_2$に依存しない」\\
+                \alert{→$\alert{\xi}$が$1/T$の一次関数とは限らない}\\
+                {\large $\xi$VS$1/T$の直線性がモデルの保証 }
+
+                
+            \end{block}
+        \end{column}
+        \begin{column}[T]{0.45\hsize}
+            
+            \includegraphics[height=6cm]{img/xi.png}
+        \end{column}
+     \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{拡張正則溶液・各種過剰量}
+    \begin{columns}
+        \begin{column}[T]{0.45\hsize}
+            \begin{block}{式}
+                \seq{
+                    G^{\mathrm{E}} &= n \xi RT x_1 x_2\\
+                    H^{\mathrm{E}} &= n A R x_1 x_2\\
+                    S^{\mathrm{E}} &= - n B R x_1 x_2
+                }
+            \end{block}
+        \end{column}
+        \begin{column}[T]{0.45\hsize}
+            \begin{block}{333~K(60~℃)において}
+                \begin{itemize}
+                    \item シクロヘキサン: \\
+                    $G^{\mathrm{E}}=0.40$ kJ mol$^{-1}$
+                    \item メタノール: \\
+                    $G^{\mathrm{E}}=0.87$ kJ mol$^{-1}$
+                \end{itemize}
+                
+            \end{block}
+            
+        \end{column}
+        
+    \end{columns}
+    \hfill\\
+    \begin{table}
+        \caption{各種過剰量}
+            \begin{tabular}{cccc}
+                \hline
+                 & $G^{\mathrm{E}}$ /kJ mol$^{-1}$ & $H^{\mathrm{E}}$ /kJ mol$^{-1}$ & $S^{\mathrm{E}}$ /J K$^{-1}$ mol$^{-1}$\\
+                \hline
+                シクロヘキサン系 & $2.5-6.3\times10^{-3}T$ & 2.5 & 6.3 \\
+                メタノール系 & $0.69+5.4\times10^{-4}T$ & 0.69 & -0.54 \\
+                \hline
+                
+            \end{tabular}
+    \end{table}
+
+\end{frame}
+\section{モデルが成立するか}
+\begin{frame}
+    \frametitle{モデルがなぜ成立(推察)}
+    \begin{columns}
+        \begin{column}{0.45\hsize}
+            \begin{block}{水素結合}
+                限られた温度範囲、固定された組成では水素結合は少々強力なファンデルワールス力として見ることができる
+                実際、メタノール系では線形性はシクロヘキサン系に比べて劣る
+            \end{block}
+        \end{column}
+        \begin{column}{0.45\hsize}
+            \begin{block}{予言可能か}
+                メタノール系:怪しい\\
+                温度変化で水素結合の寄与が大きく変化する可能性\\\vfill
+                シクロヘキサン系:可能性あり\\
+                $\pi$スタッキングの配向性が気になるがメタノールほど強力ではない
+            \end{block}
+            
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+% \section{各種パラメータをどう見るか}
+% \begin{frame}
+%     \frametitle{算出した値からわかること}
+%     \begin{block}{$\xi$の大きさから}
+%         \begin{itemize}
+%             \item シクロヘキサン系:$\xi=0.5〜0.9$程度
+%             \item メタノール系:$\xi=2.1〜2.3$程度
+%         \end{itemize}
+%         $\xi>0$であるから、両系ともに相互作用が弱まる。\\
+%         メタノールはより大きく相互作用が弱まる。
+%     \end{block}
+%     \begin{block}{活量から}
+%         \begin{itemize}
+%             \item シクロヘキサン系
+%                 \begin{itemize}
+%                     \item シクロヘキサンはさほど影響を受けない
+%                     \item トルエンは予想されるように相互作用が弱まり活量は大きく出る
+%                 \end{itemize}
+%             \item メタノール系
+%                 \begin{itemize}
+%                     \item メタノールも予想されるように相互作用が弱まり活量は大きく出る
+%                     \item トルエンは異常に活量が大きく出る
+%                 \end{itemize}
+%         \end{itemize}
+%     \end{block}
+% \end{frame}
+% \section{過剰エンタルピーは過剰エントロピーの存在}
+% \begin{frame}
+%     \frametitle{正則溶液は必ず$S^{\mathrm{E}}$に対して近似を置かなければならない}
+%     \begin{block}{$\Delta H_{\mathrm{mix}} \neq 0$の場合}
+%         \seq{
+%             \Delta H_{\mathrm{mix}} &= \Delta E_{mix} + P \Delta V_{\mathrm{mix}}\\
+%             &= \Delta (U + K)_{\mathrm{mix}} + P \Delta V_{\mathrm{mix}}\\
+%         }
+%         分子間相互作用$U$の変化を無視したがために種々の矛盾が生じる。\\\vfill
+%         $S$は内部エネルギー$E$のみの関数であるから、$U$が変化すれば$\Delta S_{\mathrm{mix}}$も変化する。
+%     \end{block}
+% \end{frame}
+
+% \section{SがEのみの関数であるとは}
+% \begin{frame}
+%     \frametitle{SがEのみの関数であるとは}
+%     \begin{block}{統計的定義}
+%         \seq{
+%             S = k\ln{W}
+%         }
+%         統計的重み$W$は分布関数$\rho$のみに従うのは明らかである。
+%     \end{block}
+%     \begin{columns}
+%         \begin{column}[T]{0.45\hsize}
+%             \begin{block}{リウヴィユ方程式}
+%                 \seq{
+%                     \pardiff{\rho}{t} =-\left\{\rho, H\right\}
+%                 }
+%                 熱平衡状態では$\rho$は時間に依存しない。\\
+%                 $\left\{\rho, H\right\}=0$から
+%             \end{block}
+%         \end{column}
+%         \begin{column}[T]{0.45\hsize}
+%             \begin{block}{任意の状況、対数の相加性を考慮}
+%                 $\ln{\rho}$の相加性を考慮、これは$E,p,L$の関数と絞られる。\\
+%                 壁のある系では$E$のみに依存する。
+                
+%             \end{block}
+%         \end{column}
+
+%     \end{columns}
+% \end{frame}
+
+\section{蒸気圧のズレ}
+\begin{frame}
+    \frametitle{蒸気圧のズレ}
+    
+    \begin{columns}
+        \begin{column}[T]{0.45\hsize}
+            \begin{block}{蒸気圧の差}
+                \seq{
+                    \Delta P &= P_{1,\mathrm{real}} - P_{1,\mathrm{ideal}}+ P_{2,\mathrm{real}} - P_{2,\mathrm{ideal}}\\
+                    &= x_1 P_{1}(\gamma_1 - 1) + x_2 P_{2}(\gamma_2 - 1)
+                }
+            \end{block}
+            \begin{figure}
+                \centering
+                \includegraphics[height=4.5cm]{img/PT_all.png}
+            \end{figure}
+        \end{column}
+        \begin{column}[T]{0.45\hsize}
+            \begin{block}{蒸気圧の差}
+                \begin{itemize}
+                    \item Tが上昇→Pが上昇
+                    \item Tが上昇→今回$\gamma$が減少
+                \end{itemize}
+                $\Delta P$の大きさは非理想性とは言えない
+            \end{block}
+            \begin{figure}
+                \centering
+                \includegraphics[height=4.5cm]{img/delta_PT.png}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+\section{活量係数の温度依存性}
+\begin{frame}
+    \frametitle{活量係数の温度依存性}
+    \begin{columns}
+        \begin{column}[T]{0.45\hsize}
+            \begin{figure}
+                \centering
+                \includegraphics[height=5cm]{img/delta_cyclohexane_coeff.png}
+                \caption{シクロヘキサン系の活量係数変化率}
+            \end{figure}
+        \end{column}
+        \begin{column}[T]{0.45\hsize}
+            \begin{figure}
+                \centering
+                \includegraphics[height=5cm]{img/delta_methanol_coeff.png}
+                \caption{メタノール系の活量係数変化率}
+            \end{figure}
+        \end{column}
+    \end{columns}
+    {\large \alert{今回のデータは温度と負の相関がある}}
+    
+\end{frame}
+
+
+
+\section{正則溶液}
+\begin{frame}
+    \frametitle{正則溶液(Heitlerによる式)}
+    \begin{columns}
+        \begin{column}[T]{0.45\hsize}
+            \includegraphics[height=4cm]{img/kousi.jpeg}
+            \begin{block}{モル分率は確率}
+                $$
+                    U=3\left(Nu_{11}x_1^2 + Nu_{22}x_2^2 + 2Nu_{12}x_1x_2\right)
+                $$
+                $$
+                    \Delta U = 6N u_{12} x_1 x_2
+                $$
+                
+            \end{block}
+
+            
+        \end{column}
+        \begin{column}[T]{0.45\hsize}
+            \begin{block}{格子より$\Delta V =0$}
+                $$
+                \Delta H = \Delta U = 6N u_{12} x_1 x_2
+                $$
+                
+            \end{block}
+            \begin{block}{$6u_{12}$を定数として}
+                $$
+                    \Delta H = N \xi RT x_1 x_2
+                $$
+                ※$\xi = \f{6u_{12}}{RT}$
+            \end{block}
+    
+        \end{column}
+    \end{columns}
+    {\tiny 参考:W. Heitler. Zwei Beiträge zur Theorie konzentrierter Lösungen. Annalen der Physik 1926,385, 629–671}
+\end{frame}
+
+
+
+
+
+\section{Antoine定数}
+\begin{frame}
+    \frametitle{算出方法}
+    \begin{block}{蒸気圧測定からの算出}
+        定数の引用元によれば、Antoine定数は蒸気圧測定による実験値から帰着されたものであるといい、それは関数のfittingによって求められる。
+        
+    \end{block}
+    \begin{table}[]
+        \centering
+        \caption{Antoineの式の定数　B. E. Poling, J. M. Prausnitz, J. P. O’Connell, The Properties of Gases and Liquids 5th
+ed., McGraw-Hill, New York, 2000}
+        \begin{tabular}{cccc}
+            \hline
+            物質 & A & B & C \\
+            \hline
+            シクロヘキサン & 6.8051 & 1182.77 & 220.618 \\
+            メタノール & 8.0779 & 1580.08 & 239.500 \\
+            トルエン & 6.9255 & 1327.62 & 217.625 \\
+            \hline
+        \end{tabular}
+        
+    \end{table}
+
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{参考文献}
+\nocite{*}\bibliography{bib/bibtest.bib}
+\bibliographystyle{cv}
+\end{frame}
+\end{document}
